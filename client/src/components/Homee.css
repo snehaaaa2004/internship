@@ -1,0 +1,99 @@
+/* styles.css */
+/* Homee.css */
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  .hero h1{
+    color:cadetblue;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    font-size: 6rem;
+    
+  
+  }
+  
+  .hero {
+      width: 100vw; /* Makes it take full screen width */
+      height: 100vh; /* Full height of screen */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem 2rem;
+      background: linear-gradient(to bottom right, #f0fff0, #ffffff);
+    
+    
+  }
+  
+  .highlight {
+    color: cadetblue;;
+    font-size: 3.5rem;
+    margin: 10px 0;
+  }
+  
+  .cta-btn {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: cadetblue;;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .cta-btn:hover {
+    transform: scale(1.05);
+    color:gray;
+    background-color: aliceblue;
+  }
+  
+  .hero h6{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+    
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .hero .highlight {
+      font-size: 33px;
+      color: cadetblue;;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      text-decoration: underline;
+    }
+    
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: black;
+    }
+    
+    .cta-btn {
+      padding: 1rem 2rem;
+      background-color: cadetblue;;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    
+    /*.download-link {
+      display: block;
+      margin-top: 1rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }*/
+    
