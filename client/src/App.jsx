@@ -7,8 +7,7 @@ import PrivateRoute from './components/PrivateRoute';
 import Home from './components/Home';
 import Logsign from './components/Logsign';
 import Signup from './components/Signup';
-import ProgressForm from './components/ProgressForm';
-import ProgressList from './components/ProgressList';
+
 import EditUsers from './components/EditUser';
 import EditScreen from './components/EditScreen';
 import Header from './components/Header';
@@ -16,6 +15,9 @@ import About from './components/About'
 import ContactUs from './components/ContactUs';
 import AdminMessages from './components/AdminMessages';
 import Footer from './components/Footer';
+import Logout from './components/Logout';
+import ProgressDashboard from './components/ProgressDashboard';
+
 const App = () => {
   const [refresh, setRefresh] = useState(false);
   const userId = '6622f0e6f9c3d88e2f5a3c9a';
@@ -35,8 +37,9 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact us" element={<ContactUs />} />
         <Route path="/mess" element={< AdminMessages/>} />
-
-
+        <Route path="/logout" element={< Logout/>} />
+        <Route path="/progressdash" element={< ProgressDashboard/>} />
+        
         {/* Protected Admin Route */}
         <Route path="/admin" element={<PrivateRoute role="admin" />}>
           <Route index element={<AdminPage />} />
@@ -47,30 +50,20 @@ const App = () => {
           <Route index element={<UserPage />} />
         </Route>
 
-        {/* Original Progress Form and List Pages */}
-        <Route
-          path="/progress-form"
-          element={<ProgressForm userId={userId} onAdd={handleAdd} />}
-        />
-        <Route
-          path="/progress-list"
-          element={<ProgressList userId={userId} refresh={refresh} />}
-        />
+        
 
         {/* 👇 New Combined Styled Progress Page */}
         <Route
-          path="/progress"
-          element={
-            <div style={styles.container}>
-              <div style={styles.card}>
-                <h1 style={styles.heading}>Fitness Progress Tracker</h1>
-                <ProgressForm userId={userId} onAdd={handleAdd} />
-                <h2 style={styles.subheading}>Progress History</h2>
-                <ProgressList userId={userId} refresh={refresh} />
-              </div>
-            </div>
-          }
+             path="/progressdash"
+             element={
+            <ProgressDashboard
+             userId={userId}
+             refresh={refresh}
+             onAdd={handleAdd}
+           />
+            }
         />
+         
       </Routes>
       <Footer/>
     </Router>

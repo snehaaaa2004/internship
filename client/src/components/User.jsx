@@ -88,46 +88,29 @@ const User = () => {
 >
   Welcome to Your Fitness Dashboard
 </Typography>
-<Typography
-  variant="h5"
-  align="center"
-  sx={{
-    fontFamily: 'monospace',
-    color: 'white',
-    letterSpacing: 2,
-    mb: 3,
-    textShadow: '2px 2px 5px rgba(214, 205, 205, 0.7), -2px -2px 5px rgba(154, 125, 125, 0.7)',
-    transform: 'translateZ(0)',
-    transition: 'all 0.3s ease',
-    
-  }}>Keep track of your progress</Typography>
+
 
 <Box sx={{ textAlign: 'center', mb: 3 }}>
+  
   <Button
     variant="contained"
-    onClick={() => navigate('/progress-form')}
+    onClick={() => navigate('/progressdash')}
     sx={{
+      fontFamily: 'monospace',
+    color: 'white',
+    letterSpacing: 2,
       mx: 1,
-      backgroundColor: '#6c757d', // Bootstrap gray-ish
+      textShadow: '2px 2px 5px rgba(214, 205, 205, 0.7), -2px -2px 5px rgba(154, 125, 125, 0.7)',
+    transform: 'translateZ(0)',
+    transition: 'all 0.3s ease',
+      backgroundColor: 'black',
       '&:hover': {
-        backgroundColor: 'black',
+        backgroundColor: 'gray',
+        
       },
     }}
   >
-    Progress Form
-  </Button>
-  <Button
-    variant="contained"
-    onClick={() => navigate('/progress-list')}
-    sx={{
-      mx: 1,
-      backgroundColor: '#6c757d',
-      '&:hover': {
-        backgroundColor: 'black',
-      },
-    }}
-  >
-    Progress History
+    Track your Progress 
   </Button>
 </Box>
 

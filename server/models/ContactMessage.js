@@ -1,13 +1,13 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 const contactMessageSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  email: { type: String, required: true },
-  subject: { type: String, required: true }, // Added subject field
-  message: { type: String, required: true },
-  date: { type: Date, default: Date.now }
-});
+  name: String,
+  email: String,
+  subject: String,
+  message: String,
+}, { timestamps: true });
 
-const ContactMessage = mongoose.model('ContactMessage', contactMessageSchema);
+// ✅ Check if model already exists before defining
+const ContactMessage = mongoose.models.ContactMessage || mongoose.model('ContactMessage', contactMessageSchema);
 
-export default ContactMessage;
+module.exports = ContactMessage;

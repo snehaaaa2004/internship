@@ -21,6 +21,8 @@ import {
   TableRow,
   Box,
 } from "@mui/material";
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+
 
 const EditUsers = () => {
   const [users, setUsers] = useState([]);
@@ -99,6 +101,29 @@ const EditUsers = () => {
           }}>
             User Management
           </Typography>
+          <Box display="flex" justifyContent="flex-end" mb={2}>
+  <Button
+    variant="outlined"
+    onClick={() => navigate('/admin')}
+    startIcon={<ArrowBackIosNewIcon />}
+    sx={{
+      color: 'white',
+      borderColor: 'white',
+      '&:hover': {
+        backgroundColor: 'white',
+        color: 'black',
+      },
+      textTransform: 'none',
+      fontWeight: 'bold',
+      borderRadius: 2,
+      px: 2,
+      py: 1,
+    }}
+  >
+    Back
+  </Button>
+</Box>
+
 
           <TableContainer component={Paper} sx={{ 
             backgroundColor: 'transparent', 

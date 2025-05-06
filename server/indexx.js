@@ -6,6 +6,7 @@ const path = require('path');
 
 const Progress = require('./models/progress.js');
 const User = require('./models/Workout');
+const ContactMessage = require('./models/ContactMessage');
 
 dotenv.config();
 
@@ -59,14 +60,6 @@ const PlanSchema = new mongoose.Schema({
 });
 const Plan = plansDB.model('Plan', PlanSchema);
 
-const contactMessageSchema = new mongoose.Schema({
-  name: String,
-  email: String,
-  subject: String,
-  message: String,
-  date: { type: Date, default: Date.now }
-});
-const ContactMessage = mongoose.model('ContactMessage', contactMessageSchema);
 
 // ==============================
 // Routes
@@ -182,6 +175,8 @@ app.get('/plans', async (req, res) => {
 });
 
 // ===== Contact Message Routes =====
+const messageRoutes = require('./Routes/contact.js'); // or whatever you named it
+app.use('/', messageRoutes);
 
 // Submit contact message
 app.post('/contact', async (req, res) => {
@@ -219,6 +214,16 @@ app.get('/admin/messages', async (req, res) => {
     res.json(messages);
   } catch (error) {
     res.status(500).json({ message: 'Failed to fetch messages' });
+  }
+});
+
+// Delete contact message (admin)
+app.delete('/admin/messages/:id', async (req, res) => {
+  try {
+    await ContactMessage.findByIdAndDelete(req.params.id);
+    res.status(200).send('Deleted');
+  } catch (err) {
+    res.status(500).send('Server error');
   }
 });
 
